@@ -10,7 +10,7 @@ import java.util.Scanner;
  * @author Francisco Javier Carrillo
  */
 public class Notas {
-    double uf1, uf2, uf3; // Notas de las unidades
+    double primera, segunda, tercera; // Notas de las unidades
     double acu1, acu2, acu3, def; // Acumulados y nota definitiva
     Scanner entrada = new Scanner(System.in); // Scanner para entrada de datos
 
@@ -19,14 +19,14 @@ public class Notas {
      * 
      * Este método permite al usuario ingresar las notas de las tres unidades formativas.
      */
-    public void IngresaNotas() {
+    public void IngresarNotas() {
         System.out.println("Ingrese las notas del estudiante");
-        System.out.print("Ingrese nota 1: ");
-        uf1 = entrada.nextDouble();
-        System.out.print("Ingrese nota 2: ");
-        uf2 = entrada.nextDouble();
-        System.out.print("Ingrese nota 3: ");
-        uf3 = entrada.nextDouble();
+        System.out.print("Ingrese la primera nota: ");
+        primera = entrada.nextDouble();
+        System.out.print("Ingrese la segunda nota: ");
+        segunda = entrada.nextDouble();
+        System.out.print("Ingrese la tercera nota: ");
+        tercera = entrada.nextDouble();
     }
 
     /**
@@ -34,24 +34,24 @@ public class Notas {
      * 
      * Este método realiza la comprobación de las notas introducidas para asegurar que se encuentran en la localización correcta
      */
-    public void comprobacion() {
+    public void comprobar() {
         // Comprobación de las notas introducidas
-        if (uf1 > 10) {
-            System.out.println("Nota 1 mal introducida");
+        if (primera > 10) {
+            System.out.println("Primera nota mal introducida");
         } else {
-            System.out.println("Nota 1 correcta");
+            System.out.println("Primera nota correcta");
         }
 
-        if (uf2 > 10) {
-            System.out.println("Nota 2 mal introducida");
+        if (segunda > 10) {
+            System.out.println("Segunda nota mal introducida");
         } else {
-            System.out.println("Nota 2 correcta");
+            System.out.println("Segunda nota correcta");
         }
 
-        if (uf3 > 10) {
-            System.out.println("Nota 3 mal introducida");
+        if (tercera > 10) {
+            System.out.println("Tercera nota mal introducida");
         } else {
-            System.out.println("Nota 3 correcta");
+            System.out.println("Tercera nota correcta");
         }
     }
 
@@ -60,10 +60,10 @@ public class Notas {
      * 
      * Este método calcula la nota definitiva del estudiante teniendo en cuenta las tres unidades formativas.
      */
-    public void Calculonotas() {
-        acu1 = uf1 * 0.35;
-        acu2 = uf2 * 0.35;
-        acu3 = uf3 * 0.30;
+    public void CalcularNotas() {
+        acu1 = primera * 0.35;
+        acu2 = segunda * 0.35;
+        acu3 = tercera * 0.30;
 
         def = acu1 + acu2 + acu3;
     }
@@ -76,9 +76,9 @@ public class Notas {
     public void Mostrar() {
         // Muestra las notas y la nota definitiva
         System.out.println("Las notas introducidas son:");
-        System.out.println("Nota 1 = " + uf1);
-        System.out.println("Nota 2 = " + uf2);
-        System.out.println("Nota 3 = " + uf3);
+        System.out.println("Primera = " + primera);
+        System.out.println("Segunda = " + segunda);
+        System.out.println("Tercera = " + tercera);
 
         System.out.println("Acumulado 1 = " + acu1);
         System.out.println("Acumulado 2 = " + acu2);
@@ -114,9 +114,9 @@ public class Notas {
         // Instanciar la clase Notas y llamar a los métodos necesarios
         Notas fc = new Notas();
 
-        fc.IngresaNotas();
-        fc.comprobacion();
-        fc.Calculonotas();
+        fc.IngresarNotas();
+        fc.comprobar();
+        fc.CalcularNotas();
         fc.Mostrar();
         fc.aprobado();
     }
