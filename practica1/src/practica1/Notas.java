@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class Notas {
     double primera, segunda, tercera; // Notas de las unidades
-    double acu1, acu2, acu3, def; // Acumulados y nota definitiva
+    double acumulada1, acumulada2, acumulada3, def; // Acumulados y nota definitiva //Cambio para GitHub
     Scanner entrada = new Scanner(System.in); // Scanner para entrada de datos
 
     /**
@@ -61,11 +61,11 @@ public class Notas {
      * Este método calcula la nota definitiva del estudiante teniendo en cuenta las tres unidades formativas.
      */
     public void CalcularNotas() {
-        acu1 = primera * 0.35;
-        acu2 = segunda * 0.35;
-        acu3 = tercera * 0.30;
+        acumulada1 = primera * 0.35; //Cambios para GitHub
+        acumulada2 = segunda * 0.35;
+        acumulada3 = tercera * 0.30;
 
-        def = acu1 + acu2 + acu3;
+        def = acumulada1 + acumulada2 + acumulada3; //Cambios GitHub
     }
 
     /**
@@ -80,9 +80,9 @@ public class Notas {
         System.out.println("Segunda = " + segunda);
         System.out.println("Tercera = " + tercera);
 
-        System.out.println("Acumulado 1 = " + acu1);
-        System.out.println("Acumulado 2 = " + acu2);
-        System.out.println("Acumulado 3 = " + acu3);
+        System.out.println("Acumulado 1 = " + acumulada1); //Cambios GitHub
+        System.out.println("Acumulado 2 = " + acumulada2);
+        System.out.println("Acumulado 3 = " + acumulada3);
 
         System.out.println("La nota definitiva es = " + def);
     }
